@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "aksprosol"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "aksprosol"
+    spec:
+      containers:
+        - name: "aksprosol"
+          image: "prosol.azurecr.io/aksprosol"
+          ports:
+          - containerPort: 80
